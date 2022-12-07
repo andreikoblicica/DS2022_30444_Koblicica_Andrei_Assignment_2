@@ -1,0 +1,17 @@
+version: '3.9'
+services:
+  mysql-debug:
+    image: mysql:8
+    container_name: dsdb
+    environment:
+      MYSQL_ROOT_PASSWORD: "root"
+      MYSQL_DATABASE: "energy-platform"
+      MYSQL_USER: "andrei"
+      MYSQL_PASSWORD: "kindsoflight"
+      TZ: Europe/Bucharest
+    ports:
+      - 3307:3306
+    volumes:
+      - ds:/var/lib/mysql
+volumes:
+  ds:
